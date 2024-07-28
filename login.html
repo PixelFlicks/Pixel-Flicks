@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-brand">
+            <span class="app-name">LOGIN</span>
+        </div>
+        <nav class="navbar-menu">
+            <ul>
+                <li id="user-info">
+                    <div id="avatar-container">
+                        <img id="user-avatar" alt="Avatar" style="display:none;">
+                    </div>
+                    <span id="username" style="display:none;"></span>
+                   
+                     
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login-screen" class="login-screen">
+            <h2>Escolha seu Avatar</h2>
+            <div id="avatar-selection">
+                <!-- Imagens de avatares -->
+            </div>
+            <label for="username-input">Nome de usuário:</label>
+            <input id="username-input" type="text" maxlength="8">
+            <button id="save-btn">Salvar</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

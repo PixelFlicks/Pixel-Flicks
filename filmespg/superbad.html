@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PobreFlix</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* CSS para bloquear anúncios */
+    .ad-container,
+    .ad-banner,
+    .advertisement {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <font face="arial">
+    <div id="sub"> 
+      <div class="player-container">
+        <iframe src="https://api.embedplayer.site/tt0829482" sandbox="allow-same-origin allow-scripts allow-forms" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <div class="card">
+          <center>
+            <h3> &nbsp;&nbsp;&nbsp; SuperBad <font color="green">&nbsp;&nbsp; 2007 </font></h3>
+            <br>
+            <br>
+            Os adolescentes Seth e Evan têm grandes esperanças para uma festa de formatura. Eles pretendem beber e conquistar as garotas para que eles possam se tornar parte da turma mais popular da escola, mas a ansiedade de separação e dois policiais entediados complicam missão dos amigos.
+            <br>
+            <br>
+            <br>
+            <img src="imagens/16anos.png" width="60" height="50">
+          </center>
+        </div>
+      </div>
+    </div>
+  </font>
+
+  <script>
+    // JavaScript para bloquear anúncios
+    document.addEventListener('DOMContentLoaded', () => {
+      // Remover elementos específicos de anúncios
+      document.querySelectorAll('.ad-container, .ad-banner, .advertisement').forEach(ad => ad.remove());
+
+      // Interceptar a inserção de novos anúncios
+      const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+          mutation.addedNodes.forEach(node => {
+            if (node.nodeType === Node.ELEMENT_NODE && node.matches('.ad-container, .ad-banner, .advertisement')) {
+              node.remove();
+            }
+          });
+        });
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  </script>
+</body>
+</html>

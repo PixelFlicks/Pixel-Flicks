@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Flicks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-brand">
+            <span class="app-name">Pixel Flicks</span>
+        </div>
+        <nav class="navbar-menu">
+            <ul>
+                <li id="user-info">
+                    <span id="username"></span>
+                    <img id="user-avatar" alt="Avatar" style="display:none;">
+                    <div id="menu-toggle" class="menu-icon" onclick="toggleMenu()">
+                        &#9776; <!-- Três barras horizontais -->
+                    </div>
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <a href="#filmes">Filmes</a>
+                        <a href="#series">Séries</a>
+                        <a href="#series">Animes</a>
+                        <a href="login.html">Login</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+  <main>
+    <section id="filmes-bombando" class="movie-section">
+      <h2>Destaques</h2>
+      <div class="movies-carousel">
+        <button class="carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+        <div class="movies-container">
+          <img src="filmes/furiosa.png"  alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/1FbkOO3uGf-tkzWOEfY5E8XvhIZsvK3Kp?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/duna 2.png" alt="Movie 2" class="movie" data-link="https://drive.google.com/drive/folders/1HT3CdGjFBRUwQSTydep2aNizMMSkh3UB?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="series/the boys.jpeg" alt="Série 4" class="movie" data-link="https://drive.google.com/drive/folders/1yzwnJno37_t4vTPyAkWvMI33sAVtXlQ_?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/invencivel.png"  alt="Movie 4" class="movie" data-link="https://drive.google.com/drive/folders/1c49ofjlVOSkcJ_wBoXxqvqi2nx0PXesb?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/imaculada.png" alt="Movie 5" class="movie" data-link="https://drive.google.com/drive/folders/1WLO_HnfpnbA3SwtrUwIsuv1SZGgmsVa7?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/ghostbusters.png" alt="Movie 6" class="movie" data-link="https://drive.google.com/drive/folders/1NZO5mDC0oEAgvKOtLfAEvMC0IKjTqN6_?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/rick and morty.jpg" alt="Movie 7" class="movie" data-link="https://drive.google.com/drive/folders/1NQvVPkybZgCL6UemlqnWUrP2QDizSJOf?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/o mal que nos habita.png" alt="Movie 6" class="movie" data-link="https://drive.google.com/drive/folders/1TXWM0WmMm3GZv5C00EdXVuq_73zVCsi9?usp=drive_link" onclick="redirectToLink(this)">
+        </div>
+        <button class="carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="continuar-assistindo" class="movie-section">
+      <h2>Continuar Assistindo</h2>
+      <div class="movies-carousel">
+        <button class="carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+        <div class="movies-container" id="continuar-assistindo-container">
+        </div>
+        <button class="carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      </div>
+      <button onclick="limparContinuarAssistindo()">Limpar Lista</button>
+    </section>
+
+    <section id="netflix" class="movie-section">
+      <h2>Ação</h2>
+      <div class="movies-carousel">
+        <button class="carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+        <div class="movies-container">
+          <img src="filmes/atlas.jpg" alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/1cg8dg9idhkHGCGSYN8yjYmFIBOFxMda1?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/um tira da pesada 4.png" alt="Movie 2" class="movie" data-link="https://drive.google.com/drive/folders/1gLJNLCqdMN-fsLMsevCKgG21m192dUbp?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/homem aranha trilogia.png" alt="Movie 3" class="movie" data-link="https://drive.google.com/drive/folders/1blthp62N9XxknMM8Mszthws4ZSG_e1Mg?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/matador de alugueu.png" alt="Movie 4" class="movie" data-link="https://drive.google.com/drive/folders/1bnGILFSKekG--6ncNlmYKv5yJFcxEYP0?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/furiosa.png"  alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/1FbkOO3uGf-tkzWOEfY5E8XvhIZsvK3Kp?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/premonição.jpeg" alt="Movie 6" class="movie" data-link="https://drive.google.com/drive/folders/1SmLRORDM-klF-lh0TeiUXUpNz_I1Jaol?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/madrugada dos mortos.jpeg" alt="Movie 7" class="movie" data-link="https://drive.google.com/drive/folders/1wr0cKsgiBsGW9cqVFNHFHwkwsH0lIPtO?usp=drive_link" onclick="redirectToLink(this)">
+        </div>
+        <button class="carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="netflix" class="movie-section">
+      <h2>Coméda</h2>
+      <div class="movies-carousel">
+        <button class="carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+        <div class="movies-container">
+          <img src="filmes/superbad.png" alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/1DU0b5-kXqnFtwfhT1IKTFVO38Pm5oE1u?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/american pie.jpg" alt="Movie 2" class="movie" data-link="https://drive.google.com/drive/folders/1l7n-Ccsfj9QnpPlJyHKzpvXua6F6kriW?usp=drive_link" onclick="redirectToLink(this)">
+        </div>
+        <button class="carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="netflix" class="movie-section">
+      <h2>Animação</h2>
+      <div class="movies-carousel">
+        <button class="carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+        <div class="movies-container">
+          <img src="filmes/El gato con botas.png" alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/1ql_PTKHJ_OnkROl26MOa6mumfZh5zfnR?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/elementos.png"  alt="Movie 4" class="movie" data-link="https://drive.google.com/drive/folders/1YRczl4pvCoPk_qECdWHhWrmS03464kiW?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/ninja kamui.png"  alt="Movie 4" class="movie" data-link="https://drive.google.com/drive/folders/1camC3ph-n_iGDH9voK-lF_HmoqpV7UFc?usp=drive_link" onclick="redirectToLink(this)">
+            <img src="filmes/kung fu panda 4.png"  alt="Movie 4" class="movie" data-link="https://drive.google.com/drive/folders/1RsbN9HueA2-8TagAjnTi6nyRXhxzSH3g?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/uma familia da pesada.jpg" alt="Movie 2" class="movie" data-link="https://drive.google.com/drive/folders/1uVb4O6XP1L8mviGL_iLFy7BeLwJEKKgt?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/Ratatouille.png" alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/1nT-E7mecE8Ve637T8_RxYhR0d5HZF5iy?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/carros.png" alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/11yTmMCmNJDFrzDksfUAOUt_ttMQOkR6A?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/rick and morty.jpg" alt="Movie 7" class="movie" data-link="https://drive.google.com/drive/folders/1NQvVPkybZgCL6UemlqnWUrP2QDizSJOf?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/invencivel.png"  alt="Movie 4" class="movie" data-link="https://drive.google.com/drive/folders/1c49ofjlVOSkcJ_wBoXxqvqi2nx0PXesb?usp=drive_link" onclick="redirectToLink(this)">
+        </div>
+        <button class="carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="series" class="movie-section">
+      <h2>Séries</h2>
+      <div class="movies-carousel">
+        <button class="carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+        <div class="movies-container">
+          <img src="series/bridgerton.jpg" alt="Série 1" class="movie" data-link="https://drive.google.com/drive/folders/1I31-SsdGqQ4C32o0kuztQjI72eYrwS_F?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="series/breaking bad.jpeg" alt="Série 2" class="movie" data-link="https://drive.google.com/drive/folders/1zv11eCd_IayXO_6QPYWPZxA0jA6vH2mz?usp=sharing" onclick="redirectToLink(this)">
+          <img src="series/black mirror.jpg" alt="Série 3" class="movie" data-link="https://drive.google.com/drive/folders/1SWFAACQSqXwyr8X4fPs8Cp_Dscq6mNl5?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="series/the boys.jpeg" alt="Série 4" class="movie" data-link="https://drive.google.com/drive/folders/1yzwnJno37_t4vTPyAkWvMI33sAVtXlQ_?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="series/prison break.jpg" alt="Série 5" class="movie" data-link="https://drive.google.com/drive/folders/1BQOwgexejux6z0ENWflMuOXfIUVWgRbW?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="series/casa do dragão.jpeg" alt="Série 6" class="movie" data-link="https://drive.google.com/drive/folders/1wuNlnXjTWXRR9T1h5SOVYiK5MA2SOUvQ?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="series/barry.jpg" alt="Série 7" class="movie" data-link="https://drive.google.com/drive/folders/1BFt3_TSShwTx4Aposgm77Tyiyhueq03R?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="series/twisted metal.jpg" alt="Série 8" class="movie" data-link="https://drive.google.com/drive/folders/1-3_MNRKZf-92_8xXhMiHOPvgVFuamedW?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="series/fallout.png" alt="Série 4" class="movie" data-link="https://drive.google.com/drive/folders/1ZFRC8GxXVJzRL-k7Bpa2cwI-BjF4MBWC?usp=drive_link" onclick="redirectToLink(this)">
+        </div>
+        <button class="carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <h2>Terror</h2>
+      <div class="movies-carousel">
+        <button class="carousel-prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+        <div class="movies-container">
+          <img src="filmes/o mal que nos habita.png" alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/1TXWM0WmMm3GZv5C00EdXVuq_73zVCsi9?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/imaculada.png" alt="Movie 2" class="movie" data-link="https://drive.google.com/drive/folders/1WLO_HnfpnbA3SwtrUwIsuv1SZGgmsVa7?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/a morte do demonio.jpg" alt="Movie 3" class="movie" data-link="https://drive.google.com/drive/folders/1NYbxUqOCAMETA6dKdXd27ibHgAgTwGF6?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/tarde da noite com o diabo.png" alt="Movie 4" class="movie" data-link="https://drive.google.com/drive/folders/117gcUbGAgep5NffzHfC9vWgIHjOIs97W?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/os observadores.png"  alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/1CBDoXh21523xBLwXjPWCQMWcQ4w6TJvG?usp=drive_link" onclick="redirectToLink(this)">
+           <img src="filmes/pearl.png"  alt="Movie 1" class="movie" data-link="https://drive.google.com/drive/folders/13ksdPVPL07hPgY2rJJ6_jS4ZXZnHH_pT?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/premonição.jpeg" alt="Movie 6" class="movie" data-link="https://drive.google.com/drive/folders/1SmLRORDM-klF-lh0TeiUXUpNz_I1Jaol?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/maligno.png" alt="Movie 2" class="movie" data-link="https://drive.google.com/drive/folders/12or3oDZJL_QaJbcXcvFTXKpu2lrkh7XT?usp=drive_link" onclick="redirectToLink(this)">
+          <img src="filmes/madrugada dos mortos.jpeg" alt="Movie 7" class="movie" data-link="https://drive.google.com/drive/folders/1wr0cKsgiBsGW9cqVFNHFHwkwsH0lIPtO?usp=drive_link" onclick="redirectToLink(this)">
+        </div>
+        <button class="carousel-next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+      </div>
+    </section>
+
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

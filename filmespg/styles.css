@@ -1,0 +1,129 @@
+/* Define o estilo global do corpo da página */
+body {
+  background-color: black; /* Define a cor de fundo como preto */
+  color: white; /* Define a cor do texto como branco */
+  font-family: Arial, sans-serif; /* Define a fonte padrão como Arial */
+  margin: 0; /* Remove as margens padrão do corpo */
+  padding: 0; /* Remove os preenchimentos padrão do corpo */
+}
+
+/* Estilo para o título h1 */
+h1 {
+  text-align: center; /* Centraliza o texto do título */
+}
+
+/* Estilo para o contêiner do iframe e da card */
+#sub {
+  margin: 20px; /* Adiciona margem ao redor do contêiner */
+}
+
+.player-container {
+  display: flex; /* Usa flexbox para o contêiner */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo do contêiner */
+  gap: 20px; /* Adiciona um espaçamento de 20px entre os itens do contêiner */
+  flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha se necessário */
+}
+
+/* Estilo para o iframe */
+iframe {
+  width: 100%; /* Define a largura como 100% do contêiner pai */
+  max-width: 800px; /* Define a largura máxima como 800px */
+  height: 460px; /* Define a altura como 460px */
+  border: 0; /* Remove a borda do iframe */
+}
+
+/* Estilo para a card */
+.card {
+  width: 17em;
+  height: 22.5em;
+  background: #171717;
+  transition: 1s ease-in-out;
+  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card span {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+
+.card .info {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 0.72em;
+  margin: 1em;
+}
+
+.card .img {
+  width: 4.8em;
+  height: 4.8em;
+  background: white;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.card .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.card a {
+  color: white;
+  transition: .4s ease-in-out;
+}
+
+.card a:hover {
+  color: red;
+}
+
+.card button {
+  padding: 0.8em 1.7em;
+  display: block;
+  margin: auto;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  transition: .4s ease-in-out;
+}
+
+.card button:hover {
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+/* Media query para telas com largura máxima de 768px */
+@media (max-width: 768px) {
+  iframe {
+    height: 300px; /* Define a altura do iframe como 300px para telas menores */
+  }
+
+  .player-container {
+    flex-direction: column; /* Alinha a card abaixo do iframe em telas menores */
+    align-items: center; /* Centraliza os itens verticalmente */
+  }
+
+  .card {
+    width: 100%; /* Faz com que a card ocupe a largura total da tela menor */
+    max-width: 500px; /* Define uma largura máxima para a card em telas menores */
+  }
+}
+
+/* Media query para telas com largura máxima de 480px */
+@media (max-width: 480px) {
+  iframe {
+    height: 200px; /* Define a altura do iframe como 200px para telas ainda menores */
+  }
+}
